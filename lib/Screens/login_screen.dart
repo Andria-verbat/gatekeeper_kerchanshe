@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
+import 'package:gatekeeper_kerchanshe/Screens/pin_entry.dart';
 import 'package:gatekeeper_kerchanshe/constants/apis.dart';
 import 'package:gatekeeper_kerchanshe/constants/colors.dart';
 import 'package:http/http.dart' as http;
@@ -69,7 +70,7 @@ class _LoginScreenState extends State<LoginScreen> {
       },
     );
   }
-  
+
 
   @override
   Widget build(BuildContext context) {
@@ -100,52 +101,40 @@ class _LoginScreenState extends State<LoginScreen> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-       
+
                     Container(
-            
+
                       child: Image.asset(
                         'lib/assets/big_k.png',
                         fit: BoxFit.cover,
                       ),
                     ),
                     SizedBox(height: 5),
+
                     Text(
-                      'management',
+                      'Buna Dhuga',
                       style: TextStyle(
                         color: Colors.white,
-                        fontSize: 23,
-                      ),
-                    ),
-                    Text(
-                      'information',
-                      style: TextStyle(
-                        color: AppColor.cyanButton,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 21,
-                      ),
-                    ),
-                    Text(
-                      'system',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 17,
+
+                        fontSize: 20,
+                        letterSpacing: 2,
+                        fontFamily: 'Roboto-Bold',
                       ),
                     ),
                     SizedBox(height: 5),
                     Container(
                       height: 1,
-                      width: MediaQuery.of(context).size.width / 1.9,
-                      color: Colors.blueAccent,
+                      width: MediaQuery.of(context).size.width / 7,
+                      color: AppColor.green,
                     ),
                     SizedBox(height: 3),
                     Text(
-                      'KERACHANSHE TRADING PLC',
+                      'TRUCK Management',
                       style: TextStyle(
-                        color: AppColor.cyanButton,
+                        color: AppColor.white,
                         fontSize: 15,
                         letterSpacing: 2,
-                        fontFamily: 'FuturaMediumCondensedBT',
+                        fontFamily: 'Roboto-Light',
                       ),
                     ),
                     SizedBox(height: 30),
@@ -154,9 +143,10 @@ class _LoginScreenState extends State<LoginScreen> {
                       children: [
                         Container(
                           color: Colors.transparent,
-                          height: MediaQuery.of(context).size.height / 4,
+                          height: MediaQuery.of(context).size.height / 3,
                           width: MediaQuery.of(context).size.width,
                           child: Container(
+                            padding: EdgeInsets.fromLTRB(30, 20, 20, 5),
                             decoration: BoxDecoration(
                                 color: AppColor.white,
                                 borderRadius: BorderRadius.all(Radius.circular(10.0))
@@ -166,15 +156,16 @@ class _LoginScreenState extends State<LoginScreen> {
 
                               crossAxisAlignment: CrossAxisAlignment.start,
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
+
                               children: [
-                                SizedBox(),
-                                Text(
+                                 Text(
                                   'License Key',
                                   style: TextStyle(
                                     color: AppColor.black,
-                                    fontSize: 23,
-                                    letterSpacing: 1.5,
-                                    fontFamily: 'FuturaMediumCondensedBT',
+                                    fontSize: 18,
+                                    letterSpacing: 1,
+                                    fontFamily: 'Roboto-Bold',
+
                                   ),
                                 ),
                                 Row(
@@ -183,7 +174,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                     Container(
                                       height: 50,
                                       width: MediaQuery.of(context).size.width *
-                                          2.7 /
+                                          3 /
                                           4,
                                       color: Colors.white,
                                       child: TextFormField(
@@ -200,12 +191,6 @@ class _LoginScreenState extends State<LoginScreen> {
                                           color: Colors.black,
                                         ),
                                         decoration: InputDecoration(
-                                          prefixIcon: Icon(Icons.vpn_key,
-                                              color: Colors.white),
-                                          suffixIcon: Icon(
-                                            Icons.vpn_key,
-                                            color: Colors.grey,
-                                          ),
 
                                           hintText: 'Eg: 12bh54122ht',
                                           hintStyle: TextStyle(
@@ -213,6 +198,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                             letterSpacing: 2,
                                             fontFamily: 'Montserrat-Light',
                                             fontWeight: FontWeight.w500,
+
                                           ),
 
                                           contentPadding: const EdgeInsets.only(
@@ -221,62 +207,93 @@ class _LoginScreenState extends State<LoginScreen> {
                                               top: 0.0),
                                           focusedBorder: OutlineInputBorder(
                                             borderSide:
-                                                BorderSide(color: Colors.white),
+                                            BorderSide(
+                                                color: Colors.grey[300]),
+                                            borderRadius:
+                                            BorderRadius.circular(30.0),
                                           ),
                                           enabledBorder: OutlineInputBorder(
                                             borderSide: BorderSide(
                                                 color: Colors.grey[300]),
+                                            borderRadius:
+                                            BorderRadius.circular(30.0),
                                           ),
                                           border: OutlineInputBorder(
                                             borderSide:
-                                                BorderSide(color: Colors.black),
+                                            BorderSide(
+                                                color: Colors.grey[300]),
                                             borderRadius:
-                                                BorderRadius.circular(12.7),
+                                                BorderRadius.circular(30.0),
                                           ),
                                         ),
                                       ),
                                     ),
                                   ],
+
+                                ),
+                                SizedBox(
+                                  width: MediaQuery.of(context).size.width,
+                                  height: 50,
+
+                                  child: RaisedButton(
+                                    shape: RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.circular(30)),
+                                    color: AppColor.green,
+                                    onPressed: () {
+                                      setState(() {
+                                        loadingBool = true;
+                                      });
+                                      if (passwordController.text.length > 15) {
+                                        Navigator.of(context).pushReplacement(
+                                          new MaterialPageRoute(
+                                            builder: (BuildContext context) {
+                                              return PinEntryScreen(
+                                          passwordController.text);
+                                            },
+                                          ),
+                                        );
+                                      } else {
+                                        _displayErSnackBar(
+                                            context, 'Please enter your license key');
+                                      }
+                                    },
+                                    child: Text(
+                                      'SUBMIT',
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 17,
+                                        fontFamily: 'Roboto-Bold',
+                                      ),
+                                    ),
+                                  ),
                                 ),
                                 SizedBox(),
                               ],
                             ),
                           ),
                         ),
-                        SizedBox(height: 10),
-                        SizedBox(
-                          width: MediaQuery.of(context).size.width,
-                          height: 50,
-                          child: RaisedButton(
-                            color: AppColor.cyanButton,
-                            onPressed: () {
-                              setState(() {
-                                loadingBool = true;
-                              });
-                              if (passwordController.text.length > 15) {
-                                Navigator.of(context).pushReplacement(
-                                  new MaterialPageRoute(
-                                    builder: (BuildContext context) {
-                                      /*return PinEntryScreen(
-                                          passwordController.text);*/
-                                    },
-                                  ),
-                                );
-                              } else {
-                                _displayErSnackBar(
-                                    context, 'Please enter your license key');
-                              }
-                            },
-                            child: Text(
-                              'SUBMIT',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 17,
-                                fontFamily: 'Roboto-Bold',
-                              ),
-                            ),
+                        SizedBox(height: 100),
+                        Text(
+                          'KERCHANSHE TRADING PLC',
+                          style: TextStyle(
+                            color: Colors.grey[800],
+
+                            fontSize: 14,
+                            letterSpacing: 1,
+                            fontFamily: 'Roboto-Bold',
                           ),
                         ),
+                        SizedBox(height: 10),
+                        Text(
+                          'version v1.0',
+                          style: TextStyle(
+                            color: Colors.grey[800],
+                            fontSize: 14,
+                            letterSpacing: 1,
+                            fontFamily: 'Roboto-Light',
+                          ),
+                        ),
+
                       ],
                     ),
                   ],
