@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
+import 'package:gatekeeper_kerchanshe/Screens/pin_entry.dart';
 import 'package:gatekeeper_kerchanshe/constants/apis.dart';
 import 'package:gatekeeper_kerchanshe/constants/colors.dart';
 import 'package:http/http.dart' as http;
@@ -197,6 +198,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                             letterSpacing: 2,
                                             fontFamily: 'Montserrat-Light',
                                             fontWeight: FontWeight.w500,
+
                                           ),
 
                                           contentPadding: const EdgeInsets.only(
@@ -245,8 +247,8 @@ class _LoginScreenState extends State<LoginScreen> {
                                         Navigator.of(context).pushReplacement(
                                           new MaterialPageRoute(
                                             builder: (BuildContext context) {
-                                              /*return PinEntryScreen(
-                                          passwordController.text);*/
+                                              return PinEntryScreen(
+                                          passwordController.text);
                                             },
                                           ),
                                         );
