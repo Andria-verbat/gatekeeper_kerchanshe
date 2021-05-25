@@ -268,21 +268,29 @@ class _LoginScreenState extends State<LoginScreen> {
                                   ),
                                 ),
                                 SizedBox(),
+
                               ],
+
                             ),
+
                           ),
+
                         ),
                         SizedBox(height: 100),
-                        Text(
-                          'KERCHANSHE TRADING PLC',
-                          style: TextStyle(
-                            color: Colors.grey[800],
+                       Text(
 
-                            fontSize: 14,
-                            letterSpacing: 1,
-                            fontFamily: 'Roboto-Bold',
-                          ),
-                        ),
+                           'KERCHANSHE TRADING PLC',
+                           style: TextStyle(
+                             color: Colors.grey[800],
+
+                             fontSize: 14,
+                             letterSpacing: 1,
+                             fontFamily: 'Roboto-Bold',
+
+                           ),
+                         ),
+
+
                         SizedBox(height: 10),
                         Text(
                           'version v1.0',
