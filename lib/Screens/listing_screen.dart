@@ -3,6 +3,7 @@ import 'dart:io';
 
 import 'package:gatekeeper_kerchanshe/constants/apis.dart';
 import 'package:gatekeeper_kerchanshe/constants/colors.dart';
+import 'package:gatekeeper_kerchanshe/widgets/list_tile.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
@@ -41,17 +42,19 @@ class _ListingScreenState extends State<ListingScreen> {
             Container(
               height: MediaQuery.of(context).size.height,
               width: MediaQuery.of(context).size.width,
-              color: Colors.blue,
+              color: Colors.white,
               child: RotatedBox(
                 quarterTurns: 4,
                 child: Image.asset(
-                  'lib/assets/bg1.jpg',
+                  // 'lib/assets/bg1.jpg',
+                  '',
                   fit: BoxFit.cover,
                 ),
               ),
             ),
-            Positioned(
-              child: Column(
+            SingleChildScrollView(                                                // USE THIS LINE FOR SCROLL ENTIRE PAGE
+                physics: ScrollPhysics(),                                         // USE THIS LINE FOR SCROLL ENTIRE PAGE
+                child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   // CrossAxisAlignment.start, IS USE TO PLACE AN OBJECT IN THE START POSITION
                   children: [
@@ -61,11 +64,11 @@ class _ListingScreenState extends State<ListingScreen> {
                       children: [
                         SizedBox(
                           // USE OF SIZEDBOX IS TO MAKE PROPER SPACE AROUND THE ICON
-                          height: 100.0,
+                          height: 60.0,
                           width: 100.0,
                           child: new IconButton(
                             padding: new EdgeInsets.fromLTRB(0, 0, 45, 0),
-                            color: AppColor.white,
+                            color: AppColor.black,
                             icon: new Icon(
                                 Icons.arrow_back,
                                 size: 40.0
@@ -81,11 +84,11 @@ class _ListingScreenState extends State<ListingScreen> {
                           children: [
                             SizedBox(
                               // USE OF SIZEDBOX IS TO MAKE PROPER SPACE AROUND THE ICON
-                              height: 100.0,
+                              height: 60.0,
                               width: 100.0,
                               child: new IconButton(
                                 padding: new EdgeInsets.fromLTRB(0, 0, 0, 0),
-                                color: AppColor.white,
+                                color: AppColor.black,
                                 icon: new Icon(
                                     Icons.power_settings_new,
                                     size: 40.0
@@ -107,7 +110,7 @@ class _ListingScreenState extends State<ListingScreen> {
                       width: 80.0,
                       child: new IconButton(
                         padding: new EdgeInsets.fromLTRB(0, 0, 20, 0),
-                        color: AppColor.white,
+                        color: AppColor.green,
                         icon: new Icon(
                             Icons.power_settings_new,
                             size: 40.0
@@ -125,11 +128,11 @@ class _ListingScreenState extends State<ListingScreen> {
                           padding:
                           const EdgeInsets.only(
                               left: 20.0,
-                              top: 24,
+                              top: 10,
                               bottom: 8),
                           child: Text('Truck status',
                             style: TextStyle(
-                              color: Colors.white,
+                              color: Colors.black,
                               fontFamily: 'Roboto-Bold',
                               fontSize: 30,
                             ),
@@ -137,35 +140,242 @@ class _ListingScreenState extends State<ListingScreen> {
                         ),
                         Padding(
                           padding: const EdgeInsets.only(
-                            left: 0.0,
-                            top: 10,
-                            bottom: 0),
-                          child: Container(
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.only(
-                                topLeft: Radius.circular(20),
-                                bottomLeft: Radius.circular(20),
+                              left: 0.0,
+                              top: 10,
+                              bottom: 0),
+                          child: Row (
+                            children: [
+                              Container(
+                                padding: const EdgeInsets.only(top: .5,bottom: .5, left: 35, right: 20),
+                                decoration: BoxDecoration(
+                                  color: AppColor.green,
+                                ),
                               ),
-                              color: Colors.orange,
-                            ),
-                            padding: const EdgeInsets.only(top: 5,bottom: 5, left: 30, right: 20),
-                            child: Text(
-                              'HISTORY',
-                              style: TextStyle(
-                                fontWeight: FontWeight.normal,
-                                fontSize: 15,
+                              SizedBox(
+                                width: 10,
                               ),
-                            ),
+                              Container(
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.only(
+                                    topLeft: Radius.circular(20),
+                                    bottomLeft: Radius.circular(20),
+                                  ),
+                                  color: Colors.orange,
+                                ),
+                                padding: const EdgeInsets.only(top: 5,bottom: 5, left: 30, right: 20),
+                                child: Text(
+                                  'HISTORY',
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.normal,
+                                    fontSize: 15,
+                                  ),
+                                ),
+                              ),
+                            ],
                           ),
 
                         ),
                       ],
                     ),
+                    Padding(
+                      padding: const EdgeInsets.only(
+                          left: 25.0,
+                          right: 25.0,
+                          top: 10,
+                          bottom: 0),
+                      child: Container(
+                        padding: const EdgeInsets.only(top: 5,bottom: 5, left: 0, right: 0),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.all(Radius.circular(20)),
+                          color: AppColor.green,
+                        ),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Row(
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsets.only(
+                                      left: 20.0,
+                                      right: 10.0,
+                                      top: 10,
+                                      bottom: 10),
+                                  child: Text('50',
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontFamily: 'Roboto-Bold',
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 60,
+                                    ),
+                                  ),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.only(
+                                      left: 10.0,
+                                      right: 25.0,
+                                      top: 10,
+                                      bottom: 10),
+                                  child: Column(
+                                    children: [
+                                      Padding(padding: const EdgeInsets.only(
+                                        right: 30.0,),
+                                        child: Text('Truck',
+                                          style: TextStyle(
+                                            color: Colors.white,
+                                            fontFamily: 'Roboto-Bold',
+                                            fontWeight: FontWeight.bold,
+                                            fontSize: 25,
+                                          ),
+                                        ),
+                                      ),
+
+                                      SizedBox(height: 0,),
+                                      Text('Passed today',
+                                        style: TextStyle(
+                                          color: Colors.white,
+                                          // fontFamily: 'Roboto-Bold',
+                                          fontWeight: FontWeight.normal,
+                                          fontSize: 15,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            ),
+
+                            Padding(
+                              padding: const EdgeInsets.only(
+                                  left: 20.0,
+                                  right: 10.0,
+                                  top: 0,
+                                  bottom: 20),
+                              child: Text('19/01/2021',
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontFamily: 'Roboto-Bold',
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 15,
+                                ),
+                              ),
+                            ),
+
+                          ],
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(
+                          left: 25.0,
+                          right: 25.0,
+                          top: 10,
+                          bottom: 15),
+                      child: Container(
+                        padding: const EdgeInsets.only(top: 5,bottom: 5, left: 0, right: 0),
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.all(Radius.circular(20)),
+                            color: Colors.orange
+                        ),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.only(
+                                  left: 20.0,
+                                  right: 10.0,
+                                  top: 10,
+                                  bottom: 10),
+                              child: Text('Truck Decline today',
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontFamily: 'Roboto-Bold',
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 20,
+                                ),
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.only(
+                                  left: 20.0,
+                                  right: 0.0,
+                                  top: 10,
+                                  bottom: 10),
+                              child: Text('03',
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontFamily: 'Roboto-Bold',
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 45,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                    Container(
+                      margin: EdgeInsets.only(bottom: 0.0),
+                      // padding: const EdgeInsets.only(top: 0,bottom: 0, left: 0, right: 0),
+                      // height: MediaQuery.of(context).size.height - 410,        // USE THIS LINE FOR SCROLL ONLY THE LIST
+                      child: Column (                                             // USE THIS LINE FOR SCROLL ENTIRE PAGE
+                        mainAxisSize: MainAxisSize.min,
+                        children: <Widget>[
+                          ListView.builder(
+                              physics: NeverScrollableScrollPhysics(),
+                              scrollDirection: Axis.vertical,
+                              shrinkWrap: true,
+                              itemCount: 20,
+                              itemBuilder: (BuildContext context, int index) {
+                                return GestureDetector(
+                                  onTap: () {
+                                    print('Index $index');
+                                  },
+                                  child: ListTileItem(
+                                      '18215'
+                                          .toString()
+                                          .toUpperCase(),
+                                      '56554455668'
+                                          .toString()
+                                          .toUpperCase(),
+                                    'Approved'.toString()
+                                        .toUpperCase(),
+                                  ),
+
+                                );
+                              }
+                          )
+                        ],
+                      ),
+                      /*                                                            // USE THIS LINE FOR SCROLL ONLY THE LIST
+                      child: ListView.builder(
+                          scrollDirection: Axis.vertical,
+                          shrinkWrap: true,
+                          itemCount: 20,
+                          itemBuilder: (BuildContext context, int index) {
+                            return GestureDetector(
+                              onTap: () {
+
+                              },
+                              child: ListTileItem(
+                                  'Ak'
+                                      .toString()
+                                      .toUpperCase(),
+                                  '10:30 AM'
+                                      .toString()
+                                      .toUpperCase()
+                              ),
+
+                            );
+                          }
+                      ),
+                      */
+                    ),
 
                   ],
                 ),
+              ),
 
-            ),
+
           ],
         ),
       ),
