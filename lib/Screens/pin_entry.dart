@@ -169,42 +169,29 @@ class _PinEntryScreenState extends State<PinEntryScreen> {
                     ),
                     SizedBox(height: 5),
                     Text(
-                      'management',
+                      'Buna Dhuga',
                       style: TextStyle(
                         color: Colors.white,
-                        fontSize: 23,
-                      ),
-                    ),
-                    Text(
-                      'information',
-                      style: TextStyle(
-                        color: Colors.blue,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 21,
-                      ),
-                    ),
-                    Text(
-                      'system',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 17,
+
+                        fontSize: 20,
+                        letterSpacing: 2,
+                        fontFamily: 'Roboto-Bold',
                       ),
                     ),
                     SizedBox(height: 5),
                     Container(
                       height: 1,
-                      width: MediaQuery.of(context).size.width / 1.9,
-                      color: Colors.blueAccent,
+                      width: MediaQuery.of(context).size.width / 7,
+                      color: AppColor.green,
                     ),
                     SizedBox(height: 3),
                     Text(
-                      'KERACHANSHE TRADING PLC',
+                      'TRUCK Management',
                       style: TextStyle(
-                        color: AppColor.cyanButton,
+                        color: AppColor.white,
                         fontSize: 15,
                         letterSpacing: 2,
-                        fontFamily: 'FuturaMediumCondensedBT',
+                        fontFamily: 'Roboto-Light',
                       ),
                     ),
                     SizedBox(height: 30),
@@ -212,44 +199,50 @@ class _PinEntryScreenState extends State<PinEntryScreen> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Container(
-                          color: Color(0xff1C3C7B),
-                          height: MediaQuery.of(context).size.height / 4,
+                          color: Colors.transparent,
+                          height: MediaQuery.of(context).size.height / 3,
                           width: MediaQuery.of(context).size.width,
-                          child: Padding(
-                            padding: const EdgeInsets.symmetric(
-                                vertical: 16, horizontal: 8),
+                          child: Container(
+                            padding: EdgeInsets.fromLTRB(30, 20, 20, 5),
+                            decoration: BoxDecoration(
+                                color: AppColor.white,
+                                borderRadius: BorderRadius.all(Radius.circular(10.0))
+                            ),
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                Row(
+                                Column(
                                   mainAxisAlignment: MainAxisAlignment.start,
                                   children: [
+                                    /*Image.asset('lib/assets/pin.png'),
+                                    SizedBox(width: 20),*/
                                     Text(
-                                      'PIN NUMBER',
+                                      'Pin Number',
                                       style: TextStyle(
-                                        color: AppColor.cyanButton,
-                                        fontSize: 23,
-                                        letterSpacing: 1.5,
-                                        fontFamily: 'FuturaMediumCondensedBT',
+                                        color: AppColor.black,
+                                        fontSize: 18,
+                                        letterSpacing: 1,
+                                        fontFamily: 'Roboto-Bold',
+
                                       ),
                                     ),
-                                    SizedBox(width: 20),
-                                    Image.asset('lib/assets/pin.png'),
+
+
                                   ],
                                 ),
                                 Row(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
                                     Container(
-                                      height: 100,
+                                      height: 80,
                                       width: MediaQuery.of(context).size.width *
-                                          3.3 /
+                                          3/
                                           4,
                                       child: Form(
                                         child: Padding(
                                           padding: const EdgeInsets.symmetric(
-                                              vertical: 8.0, horizontal: 30),
+                                              vertical: 8.0, horizontal: 20),
                                           child: PinCodeTextField(
                                             appContext: context,
                                             pastedTextStyle: TextStyle(
@@ -272,7 +265,7 @@ class _PinEntryScreenState extends State<PinEntryScreen> {
                                                   PinCodeFieldShape.underline,
                                               disabledColor: Colors.grey,
                                               inactiveColor: Colors.grey,
-                                              activeColor: Colors.blue,
+                                              activeColor: Colors.grey,
                                               fieldHeight: 60,
                                               fieldWidth: 30,
                                             ),
@@ -283,7 +276,7 @@ class _PinEntryScreenState extends State<PinEntryScreen> {
                                                 color: Colors.white,
                                                 fontSize: 20,
                                                 height: 1.6),
-                                            backgroundColor: Color(0xff1C3C7B),
+                                            backgroundColor: AppColor.white,
                                             keyboardType: TextInputType.number,
                                             onCompleted: (v) {
                                               print("Completed");
@@ -305,35 +298,62 @@ class _PinEntryScreenState extends State<PinEntryScreen> {
                                     ),
                                   ],
                                 ),
-                                SizedBox(),
+
+                                SizedBox(
+                                  width: MediaQuery.of(context).size.width,
+                                  height: 50,
+                                  child: RaisedButton(
+                                    shape: RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.circular(30)),
+                                    color: AppColor.green,
+                                    onPressed: () {
+                                      if (currentText != null) {
+                                        getRegisterd(currentText);
+                                      } else {
+                                        _displayErSnackBar(
+                                            context, 'Please enter your pin number');
+                                      }
+                                    },
+                                    child: Text(
+                                      'SUBMIT',
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 17,
+                                        fontFamily: 'Roboto-Bold',
+                                      ),
+                                    ),
+                                  ),
+                                ),
                               ],
                             ),
                           ),
                         ),
-                        SizedBox(height: 10),
-                        SizedBox(
-                          width: MediaQuery.of(context).size.width,
-                          height: 50,
-                          child: RaisedButton(
-                            color: AppColor.cyanButton,
-                            onPressed: () {
-                              if (currentText != null) {
-                                getRegisterd(currentText);
-                              } else {
-                                _displayErSnackBar(
-                                    context, 'Please enter your pin number');
-                              }
-                            },
-                            child: Text(
-                              'SUBMIT',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 17,
-                                fontFamily: 'Roboto-Bold',
-                              ),
-                            ),
+                        SizedBox(height: 70),
+                        Text(
+
+                          'KERCHANSHE TRADING PLC',
+                          style: TextStyle(
+                            color: Colors.grey[800],
+
+                            fontSize: 14,
+                            letterSpacing: 1,
+                            fontFamily: 'Roboto-Bold',
+
                           ),
                         ),
+
+
+                        SizedBox(height: 10),
+                        Text(
+                          'version v1.0',
+                          style: TextStyle(
+                            color: Colors.grey[800],
+                            fontSize: 14,
+                            letterSpacing: 1,
+                            fontFamily: 'Roboto-Light',
+                          ),
+                        ),
+
                       ],
                     ),
                   ],
