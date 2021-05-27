@@ -141,7 +141,7 @@ class _PinEntryScreenState extends State<PinEntryScreen> {
           Container(
             height: MediaQuery.of(context).size.height,
             width: MediaQuery.of(context).size.width,
-            color: Colors.blue,
+
             child: RotatedBox(
               quarterTurns: 4,
               child: Image.asset(
@@ -163,7 +163,7 @@ class _PinEntryScreenState extends State<PinEntryScreen> {
                   children: [
                     Container(
                       child: Image.asset(
-                        'lib/assets/big_k.png',
+                        'lib/assets/greenicon.png',
                         fit: BoxFit.cover,
                       ),
                     ),
@@ -173,28 +173,28 @@ class _PinEntryScreenState extends State<PinEntryScreen> {
                       style: TextStyle(
                         color: Colors.white,
 
-                        fontSize: 20,
+                        fontSize: 28,
                         letterSpacing: 2,
-                        fontFamily: 'Roboto-Bold',
+                        fontFamily: 'Montserrat-Bold',
                       ),
                     ),
-                    SizedBox(height: 5),
+                    SizedBox(height: 10),
                     Container(
                       height: 1,
                       width: MediaQuery.of(context).size.width / 7,
                       color: AppColor.green,
                     ),
-                    SizedBox(height: 3),
+                    SizedBox(height: 10),
                     Text(
-                      'WAREHOUSE Management',
+                      'Warehouse Management',
                       style: TextStyle(
                         color: AppColor.white,
-                        fontSize: 15,
+                        fontSize: 18,
                         letterSpacing: 2,
-                        fontFamily: 'Roboto-Light',
+                        fontFamily: 'Montserrat-Regular',
                       ),
                     ),
-                    SizedBox(height: 30),
+                    SizedBox(height: 120),
                     Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
@@ -206,31 +206,35 @@ class _PinEntryScreenState extends State<PinEntryScreen> {
                             padding: EdgeInsets.fromLTRB(30, 20, 20, 5),
                             decoration: BoxDecoration(
                                 color: AppColor.white,
-                                borderRadius: BorderRadius.all(Radius.circular(10.0))
+                                borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                              border: Border.all(
+                            color: AppColor.lightgrey,
+                              width: 1,
+                            )
                             ),
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                Column(
-                                  mainAxisAlignment: MainAxisAlignment.start,
-                                  children: [
-                                    /*Image.asset('lib/assets/pin.png'),
-                                    SizedBox(width: 20),*/
+                               /* Column(
+                                  mainAxisAlignment: MainAxisAlignment.start,*/
+                                 // children: [
+                                    Image.asset('lib/assets/pin.png'),
+
                                     Text(
                                       'Pin Number',
                                       style: TextStyle(
                                         color: AppColor.black,
                                         fontSize: 18,
                                         letterSpacing: 1,
-                                        fontFamily: 'Roboto-Bold',
+                                        fontFamily: 'Montserrat-Bold',
 
                                       ),
                                     ),
 
 
-                                  ],
-                                ),
+                                 // ],
+                               // ),
                                 Row(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
@@ -273,7 +277,7 @@ class _PinEntryScreenState extends State<PinEntryScreen> {
                                             animationDuration:
                                                 Duration(milliseconds: 300),
                                             textStyle: TextStyle(
-                                                color: Colors.white,
+                                                color: AppColor.black,
                                                 fontSize: 20,
                                                 height: 1.6),
                                             backgroundColor: AppColor.white,
@@ -319,7 +323,7 @@ class _PinEntryScreenState extends State<PinEntryScreen> {
                                       style: TextStyle(
                                         color: Colors.white,
                                         fontSize: 17,
-                                        fontFamily: 'Roboto-Bold',
+                                        fontFamily: 'Montserrat-Bold',
                                       ),
                                     ),
                                   ),
@@ -328,29 +332,27 @@ class _PinEntryScreenState extends State<PinEntryScreen> {
                             ),
                           ),
                         ),
-                        SizedBox(height: 70),
+                        SizedBox(height: 80),
                         Text(
 
                           'KERCHANSHE TRADING PLC',
                           style: TextStyle(
                             color: AppColor.darkgrey,
-
                             fontSize: 14,
                             letterSpacing: 1,
-                            fontFamily: 'Roboto-Bold',
-
+                            fontFamily: 'Montserrat-Bold',
                           ),
                         ),
 
 
-                        SizedBox(height: 10),
+                        //SizedBox(height: 10),
                         Text(
                           'version v1.0',
                           style: TextStyle(
                             color: AppColor.darkgrey,
                             fontSize: 14,
                             letterSpacing: 1,
-                            fontFamily: 'Roboto-Light',
+                            fontFamily: 'Montserrat-Bold',
                           ),
                         ),
 

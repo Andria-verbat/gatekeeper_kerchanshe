@@ -48,7 +48,7 @@ class _ListingScreenState extends State<ListingScreen> {
                 child: Image.asset(
                   'lib/assets/listing_bg.png',
 
-                  fit: BoxFit.cover,
+                  fit: BoxFit.fill,
                 ),
               ),
             ),
@@ -84,11 +84,11 @@ class _ListingScreenState extends State<ListingScreen> {
                           children: [
                             SizedBox(
                               // USE OF SIZEDBOX IS TO MAKE PROPER SPACE AROUND THE ICON
-                              height: 60.0,
-                              width: 100.0,
+                              height: 50.0,
+                              width: 50.0,
                               child: new IconButton(
                                 padding: new EdgeInsets.fromLTRB(0, 0, 0, 0),
-                                color: AppColor.black,
+                                color: AppColor.white,
                                 icon: new Icon(
                                     Icons.power_settings_new,
                                     size: 40.0
@@ -134,7 +134,7 @@ class _ListingScreenState extends State<ListingScreen> {
                           child: Text('Truck status',
                             style: TextStyle(
                               color: Colors.black,
-                              fontFamily: 'Roboto-Bold',
+                              fontFamily: 'Montserrat-Bold',
                               fontSize: 30,
                             ),
                           ),
@@ -223,7 +223,7 @@ class _ListingScreenState extends State<ListingScreen> {
                                         child: Text('Truck',
                                           style: TextStyle(
                                             color: Colors.white,
-                                            fontFamily: 'Roboto-Bold',
+                                            fontFamily: 'Montserrat-Bold',
                                             fontWeight: FontWeight.bold,
                                             fontSize: 25,
                                           ),
@@ -234,7 +234,7 @@ class _ListingScreenState extends State<ListingScreen> {
                                       Text('Passed today',
                                         style: TextStyle(
                                           color: Colors.white,
-                                          // fontFamily: 'Roboto-Bold',
+                                          fontFamily: 'Montserrat-Regular',
                                           fontWeight: FontWeight.normal,
                                           fontSize: 15,
                                         ),
@@ -254,7 +254,7 @@ class _ListingScreenState extends State<ListingScreen> {
                               child: Text('19/01/2021',
                                 style: TextStyle(
                                   color: Colors.white,
-                                  fontFamily: 'Roboto-Bold',
+                                  fontFamily: 'Montserrat-Regular',
                                   fontWeight: FontWeight.bold,
                                   fontSize: 15,
                                 ),
@@ -289,7 +289,7 @@ class _ListingScreenState extends State<ListingScreen> {
                               child: Text('Truck Decline today',
                                 style: TextStyle(
                                   color: Colors.white,
-                                  fontFamily: 'Roboto-Bold',
+                                  fontFamily: 'Montserrat-Regular',
                                   fontWeight: FontWeight.bold,
                                   fontSize: 20,
                                 ),
@@ -304,7 +304,7 @@ class _ListingScreenState extends State<ListingScreen> {
                               child: Text('03',
                                 style: TextStyle(
                                   color: Colors.white,
-                                  fontFamily: 'Roboto-Bold',
+                                  fontFamily: 'Montserrat-Bold',
                                   fontWeight: FontWeight.bold,
                                   fontSize: 45,
                                 ),

@@ -81,7 +81,7 @@ class _LoginScreenState extends State<LoginScreen> {
           Container(
             height: MediaQuery.of(context).size.height,
             width: MediaQuery.of(context).size.width,
-            color: Colors.blue,
+
             child: RotatedBox(
               quarterTurns: 4,
               child: Image.asset(
@@ -105,7 +105,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     Container(
 
                       child: Image.asset(
-                        'lib/assets/big_k.png',
+                        'lib/assets/greenicon.png',
                         fit: BoxFit.cover,
                       ),
                     ),
@@ -116,28 +116,28 @@ class _LoginScreenState extends State<LoginScreen> {
                       style: TextStyle(
                         color: Colors.white,
 
-                        fontSize: 20,
+                        fontSize: 28,
                         letterSpacing: 2,
-                        fontFamily: 'Roboto-Bold',
+                        fontFamily: 'Montserrat-Bold',
                       ),
                     ),
-                    SizedBox(height: 5),
+                    SizedBox(height: 10),
                     Container(
                       height: 1,
                       width: MediaQuery.of(context).size.width / 7,
                       color: AppColor.green,
                     ),
-                    SizedBox(height: 3),
+                    SizedBox(height: 10),
                     Text(
-                      'WAREHOUSE Management',
+                      'Warehouse Management',
                       style: TextStyle(
                         color: AppColor.white,
-                        fontSize: 15,
+                        fontSize: 18,
                         letterSpacing: 2,
-                        fontFamily: 'Roboto-Light',
+                        fontFamily: 'Montserrat-Regular',
                       ),
                     ),
-                    SizedBox(height: 30),
+                    SizedBox(height: 120),
                     Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
@@ -149,7 +149,11 @@ class _LoginScreenState extends State<LoginScreen> {
                             padding: EdgeInsets.fromLTRB(30, 20, 20, 5),
                             decoration: BoxDecoration(
                                 color: AppColor.white,
-                                borderRadius: BorderRadius.all(Radius.circular(10.0))
+                                borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                                border: Border.all(
+                                  color: AppColor.lightgrey,
+                                  width: 1,
+                                )
                             ),
 
                             child: Column(
@@ -158,13 +162,15 @@ class _LoginScreenState extends State<LoginScreen> {
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
 
                               children: [
+                                Image.asset('lib/assets/key.png'),
+                                    //SizedBox(width: 10),
                                  Text(
                                   'License Key',
                                   style: TextStyle(
                                     color: AppColor.black,
                                     fontSize: 18,
                                     letterSpacing: 1,
-                                    fontFamily: 'Roboto-Bold',
+                                    fontFamily: 'Montserrat-Bold',
 
                                   ),
                                 ),
@@ -196,7 +202,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                           hintStyle: TextStyle(
                                             color: Colors.grey,
                                             letterSpacing: 2,
-                                            fontFamily: 'Montserrat-Light',
+                                            fontFamily: 'Montserrat-Regular',
                                             fontWeight: FontWeight.w500,
 
                                           ),
@@ -262,7 +268,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                       style: TextStyle(
                                         color: Colors.white,
                                         fontSize: 17,
-                                        fontFamily: 'Roboto-Bold',
+                                        fontFamily: 'Montserrat-Bold',
                                       ),
                                     ),
                                   ),
@@ -285,20 +291,20 @@ class _LoginScreenState extends State<LoginScreen> {
 
                              fontSize: 14,
                              letterSpacing: 1,
-                             fontFamily: 'Roboto-Bold',
+                             fontFamily: 'Montserrat-Bold',
 
                            ),
                          ),
 
 
-                        SizedBox(height: 10),
+                       // SizedBox(height: 10),
                         Text(
                           'version v1.0',
                           style: TextStyle(
                             color: AppColor.darkgrey,
                             fontSize: 14,
                             letterSpacing: 1,
-                            fontFamily: 'Roboto-Light',
+                            fontFamily: 'Montserrat-Bold',
                           ),
                         ),
 

@@ -76,7 +76,7 @@ class ListTileItem extends StatelessWidget {
                               maxWidth: 40,
                               maxHeight: 40,
                             ),
-                            child: Image.asset('lib/assets/k.png', fit: BoxFit.cover),
+                            child: Image.asset('lib/assets/truck.png', fit: BoxFit.cover),
                           ),
                         ),
                         SizedBox(
@@ -219,15 +219,18 @@ class ListTileItem extends StatelessWidget {
                                 bottom: 0),
                             child: Container(
                               height: 90,
-                              width: 120,
+                              width: 130,
                               padding: const EdgeInsets.only(top: 0,bottom: 0, left: 0, right: 0),
                               decoration: BoxDecoration(
                                 // borderRadius: BorderRadius.all(Radius.circular(20)),
-                                  color: Colors.lightGreen[100]
+                                  color: AppColor.milkishgreen
                               ),
                               child: Row(
                                 children: [
-                                  new IconButton(
+                                  SizedBox(
+                                    width: 10,
+                                  ),
+                                  /*new IconButton(
                                     padding: new EdgeInsets.fromLTRB(0, 0, 0, 0),
                                     color: AppColor.green,
                                     icon: new Icon(
@@ -237,6 +240,19 @@ class ListTileItem extends StatelessWidget {
                                     onPressed: () {
                                       print("Power click");
                                     },
+                                  ),*/
+                                  //new Image.asset('lib/assets/tick.png', fit: BoxFit.none),
+                                 new ConstrainedBox(
+                                    constraints: BoxConstraints(
+                                      minWidth: 20,
+                                      minHeight: 20,
+                                      maxWidth: 40,
+                                      maxHeight: 40,
+                                    ),
+                                    child: Image.asset('lib/assets/tick.png', fit: BoxFit.fill),
+                                  ),
+                                  SizedBox(
+                                    width: 5,
                                   ),
                                   Text(
                                     this.approvedString,
