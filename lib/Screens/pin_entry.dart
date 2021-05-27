@@ -186,7 +186,7 @@ class _PinEntryScreenState extends State<PinEntryScreen> {
                     ),
                     SizedBox(height: 3),
                     Text(
-                      'TRUCK Management',
+                      'WAREHOUSE Management',
                       style: TextStyle(
                         color: AppColor.white,
                         fontSize: 15,

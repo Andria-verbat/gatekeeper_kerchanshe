@@ -129,7 +129,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                     SizedBox(height: 3),
                     Text(
-                      'TRUCK Management',
+                      'WAREHOUSE Management',
                       style: TextStyle(
                         color: AppColor.white,
                         fontSize: 15,
