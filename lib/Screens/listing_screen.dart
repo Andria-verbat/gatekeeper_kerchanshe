@@ -46,8 +46,8 @@ class _ListingScreenState extends State<ListingScreen> {
               child: RotatedBox(
                 quarterTurns: 4,
                 child: Image.asset(
-                  // 'lib/assets/bg1.jpg',
-                  '',
+                  'lib/assets/listing_bg.png',
+
                   fit: BoxFit.cover,
                 ),
               ),
@@ -107,8 +107,8 @@ class _ListingScreenState extends State<ListingScreen> {
                     SizedBox(
                       // USE OF SIZEDBOX IS TO MAKE PROPER SPACE AROUND THE ICON
                       height: 50.0,
-                      width: 80.0,
-                      child: new IconButton(
+                      width: 50.0,
+                      /*child: new IconButton(
                         padding: new EdgeInsets.fromLTRB(0, 0, 20, 0),
                         color: AppColor.green,
                         icon: new Icon(
@@ -118,7 +118,8 @@ class _ListingScreenState extends State<ListingScreen> {
                         onPressed: () {
                           print("power click");
                         },
-                      ),
+                      ),*/
+                      child: Image.asset('lib/assets/greenicon.png', fit: BoxFit.none),
                     ),
 
                     Row(
@@ -160,7 +161,7 @@ class _ListingScreenState extends State<ListingScreen> {
                                     topLeft: Radius.circular(20),
                                     bottomLeft: Radius.circular(20),
                                   ),
-                                  color: Colors.orange,
+                                  color: AppColor.green1,
                                 ),
                                 padding: const EdgeInsets.only(top: 5,bottom: 5, left: 30, right: 20),
                                 child: Text(
@@ -274,7 +275,7 @@ class _ListingScreenState extends State<ListingScreen> {
                         padding: const EdgeInsets.only(top: 5,bottom: 5, left: 0, right: 0),
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.all(Radius.circular(20)),
-                            color: Colors.orange
+                            color: AppColor.green1
                         ),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
