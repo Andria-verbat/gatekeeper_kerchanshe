@@ -145,7 +145,7 @@ class _PinEntryScreenState extends State<PinEntryScreen> {
             child: RotatedBox(
               quarterTurns: 4,
               child: Image.asset(
-                'lib/assets/bg1.jpg',
+                'lib/assets/login_bg.png',
                 fit: BoxFit.cover,
               ),
             ),
