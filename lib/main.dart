@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:gatekeeper_kerchanshe/Screens/detail_screen.dart';
 import 'package:gatekeeper_kerchanshe/Screens/listing_screen.dart';
 import 'package:gatekeeper_kerchanshe/Screens/pin_entry.dart';
 import 'package:shared_preferences/shared_preferences.dart';
