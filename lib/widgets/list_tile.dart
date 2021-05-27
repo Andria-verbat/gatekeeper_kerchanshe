@@ -51,7 +51,7 @@ class ListTileItem extends StatelessWidget {
                 height: MediaQuery.of(context).size.height,
                 width: MediaQuery.of(context).size.width,
                 decoration: BoxDecoration(
-                  color: Colors.grey[300],
+                  color: AppColor.lightgrey,
                   borderRadius: BorderRadius.only(
                     topLeft: Radius.circular(20),
                     bottomLeft: Radius.circular(20),
@@ -98,7 +98,7 @@ class ListTileItem extends StatelessWidget {
                                   child: Text(
                                     "Request No: ",
                                     style: TextStyle(
-                                      color: Colors.black,
+                                      color: AppColor.black,
                                       fontWeight: FontWeight.normal,
                                       fontSize: 15,
                                       letterSpacing: 0,
@@ -115,7 +115,7 @@ class ListTileItem extends StatelessWidget {
                                   child: Text(
                                     this.requestNoString,
                                     style: TextStyle(
-                                      color: Colors.black,
+                                      color: AppColor.black,
                                       fontWeight: FontWeight.bold,
                                       fontSize: 15,
                                       letterSpacing: 0,
@@ -154,7 +154,7 @@ class ListTileItem extends StatelessWidget {
                                   child: Text(
                                     "Container No: ",
                                     style: TextStyle(
-                                      color: Colors.black,
+                                      color: AppColor.black,
                                       fontWeight: FontWeight.bold,
                                       fontSize: 12,
                                       letterSpacing: 0,
@@ -171,7 +171,7 @@ class ListTileItem extends StatelessWidget {
                                   child: Text(
                                     this.containerNoString,
                                     style: TextStyle(
-                                      color: Colors.black,
+                                      color: AppColor.black,
                                       fontWeight: FontWeight.normal,
                                       fontSize: 12,
                                       letterSpacing: 0,
@@ -241,7 +241,7 @@ class ListTileItem extends StatelessWidget {
                                   Text(
                                     this.approvedString,
                                     style: TextStyle(
-                                      color: Colors.black,
+                                      color: AppColor.black,
                                       fontWeight: FontWeight.normal,
                                       fontSize: 12,
                                       letterSpacing: 0,
@@ -263,7 +263,7 @@ class ListTileItem extends StatelessWidget {
                               padding: const EdgeInsets.only(top: 0,bottom: 0, left: 0, right: 0),
                               decoration: BoxDecoration(
                                 // borderRadius: BorderRadius.all(Radius.circular(20)),
-                                  color: Colors.grey[600]
+                                  color: AppColor.darkgrey
                               ),
                               child: new IconButton(
                                 padding: new EdgeInsets.fromLTRB(0, 0, 0, 0),
