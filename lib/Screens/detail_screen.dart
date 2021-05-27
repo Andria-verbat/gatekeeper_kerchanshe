@@ -46,9 +46,8 @@ class _DetailScreenState extends State<DetailScreen> {
               child: RotatedBox(
                 quarterTurns: 4,
                 child: Image.asset(
-                  // 'lib/assets/bg1.jpg',
-                  '',
-                  fit: BoxFit.cover,
+                  'lib/assets/listing_bg.png',
+                  fit: BoxFit.fill,
                 ),
               ),
             ),
@@ -83,21 +82,21 @@ class _DetailScreenState extends State<DetailScreen> {
                           // CrossAxisAlignment.start, IS USE TO PLACE AN OBJECT IN THE END POSITION
                           children: [
                             SizedBox(
-                              // USE OF SIZEDBOX IS TO MAKE PROPER SPACE AROUND THE ICON
-                              height: 60.0,
-                              width: 100.0,
-                              child: new IconButton(
-                                padding: new EdgeInsets.fromLTRB(0, 0, 0, 0),
-                                color: AppColor.black,
-                                icon: new Icon(
-                                    Icons.power_settings_new,
-                                    size: 40.0
+                                // USE OF SIZEDBOX IS TO MAKE PROPER SPACE AROUND THE ICON
+                                height: 50.0,
+                                width: 50.0,
+                                child: new IconButton(
+                                  padding: new EdgeInsets.fromLTRB(0, 0, 0, 0),
+                                  color: AppColor.white,
+                                  icon: new Icon(
+                                      Icons.power_settings_new,
+                                      size: 40.0
+                                  ),
+                                  onPressed: () {
+                                    print("power click");
+                                  },
                                 ),
-                                onPressed: () {
-                                  print("power click");
-                                },
                               ),
-                            ),
                           ],
                         ),
 
@@ -174,7 +173,10 @@ class _DetailScreenState extends State<DetailScreen> {
                       child: Container(
                         padding: const EdgeInsets.only(top: 5,bottom: 5, left: 0, right: 0),
                         decoration: BoxDecoration(
-                          borderRadius: BorderRadius.all(Radius.circular(20)),
+                          borderRadius: BorderRadius.only(
+                            topLeft: Radius.circular(20),
+                            topRight: Radius.circular(20),
+                          ),
                           color: Colors.lightGreen[200],
                         ),
                         child: Row(
@@ -214,7 +216,7 @@ class _DetailScreenState extends State<DetailScreen> {
                                         ),
                                       ),
                                       SizedBox(
-                                        height: 30,
+                                        height: 25,
                                       ),
                                       Text('Driver Name',
                                         style: TextStyle(
@@ -225,7 +227,7 @@ class _DetailScreenState extends State<DetailScreen> {
                                         ),
                                       ),
                                       SizedBox(
-                                        height: 20,
+                                        height: 25,
                                       ),
                                       Text('Plate No',
                                         style: TextStyle(
@@ -236,7 +238,7 @@ class _DetailScreenState extends State<DetailScreen> {
                                         ),
                                       ),
                                       SizedBox(
-                                        height: 20,
+                                        height: 25,
                                       ),
                                       Text('DELIVARY DATE',
                                         style: TextStyle(
@@ -249,34 +251,6 @@ class _DetailScreenState extends State<DetailScreen> {
                                     ],
                                   ),
                                 ),
-
-
-                                // Row(
-                                //   mainAxisAlignment: MainAxisAlignment.center,
-                                //   crossAxisAlignment: CrossAxisAlignment.start,
-                                //   children: [
-                                //     Text('Container No',
-                                //       style: TextStyle(
-                                //         color: Colors.black,
-                                //         // fontFamily: 'Roboto-Bold',
-                                //         fontWeight: FontWeight.bold,
-                                //         fontSize: 20,
-                                //       ),
-                                //     ),
-                                //     SizedBox(
-                                //       width: 20,
-                                //     ),
-                                //     Text('56897',
-                                //       style: TextStyle(
-                                //         color: Colors.black,
-                                //         // fontFamily: 'Roboto-Bold',
-                                //         fontWeight: FontWeight.bold,
-                                //         fontSize: 20,
-                                //       ),
-                                //     ),
-                                //   ],
-                                // ),
-
 
 
                               ],
@@ -343,69 +317,24 @@ class _DetailScreenState extends State<DetailScreen> {
                                         style: TextStyle(
                                           color: Colors.black,
                                           // fontFamily: 'Roboto-Bold',
-                                          fontWeight: FontWeight.bold,
-                                          fontSize: 15,
+                                          fontWeight: FontWeight.normal,
+                                          fontSize: 20,
                                         ),
                                       ),
                                       SizedBox(
                                         height: 20,
                                       ),
-                                      Text('DELIVARY DATE',
+                                      Text('05/12/2020',
                                         style: TextStyle(
                                           color: Colors.black,
                                           // fontFamily: 'Roboto-Bold',
-                                          fontWeight: FontWeight.bold,
+                                          fontWeight: FontWeight.normal,
                                           fontSize: 15,
                                         ),
                                       ),
                                     ],
                                   ),
                                 ),
-
-
-                                // Padding(
-                                //   padding: const EdgeInsets.only(
-                                //       left: 95.0,
-                                //       right: 0.0,
-                                //       top: 10,
-                                //       bottom: 10),
-                                //   child: Row(
-                                //     mainAxisAlignment: MainAxisAlignment.center,
-                                //     crossAxisAlignment: CrossAxisAlignment.start,
-                                //     children: [
-                                //       Text('Driver ID',
-                                //         style: TextStyle(
-                                //           color: Colors.black,
-                                //           // fontFamily: 'Roboto-Bold',
-                                //           fontWeight: FontWeight.bold,
-                                //           fontSize: 15,
-                                //         ),
-                                //       ),
-                                //       SizedBox(
-                                //         width: 25,
-                                //       ),
-                                //       ConstrainedBox(
-                                //         constraints: BoxConstraints(
-                                //           minWidth: 60.0,
-                                //           maxWidth: MediaQuery.of(context).size.width - 250,
-                                //           minHeight: 20.0,
-                                //           maxHeight: 100.0,
-                                //         ),
-                                //         child: Text('KER-162367890123454545',
-                                //           style: TextStyle(
-                                //             color: Colors.black,
-                                //             // fontFamily: 'Roboto-Bold',
-                                //             fontWeight: FontWeight.bold,
-                                //             fontSize: 15,
-                                //           ),
-                                //         ),
-                                //       ),
-                                //
-                                //     ],
-                                //   ),
-                                // ),
-
-
 
                               ],
                             )
@@ -422,8 +351,8 @@ class _DetailScreenState extends State<DetailScreen> {
                       child: Container(
                         padding: const EdgeInsets.only(top: 5,bottom: 5, left: 0, right: 0),
                         decoration: BoxDecoration(
-                            borderRadius: BorderRadius.all(Radius.circular(20)),
-                            color: Colors.green[400]
+                            // borderRadius: BorderRadius.all(Radius.circular(20)),
+                            color: AppColor.green
                         ),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
@@ -434,9 +363,9 @@ class _DetailScreenState extends State<DetailScreen> {
                                   right: 10.0,
                                   top: 10,
                                   bottom: 10),
-                              child: Text('Truck Decline today',
+                              child: Text('APPROVED BY',
                                 style: TextStyle(
-                                  color: Colors.white,
+                                  color: Colors.black,
                                   fontFamily: 'Roboto-Bold',
                                   fontWeight: FontWeight.bold,
                                   fontSize: 20,
@@ -449,78 +378,124 @@ class _DetailScreenState extends State<DetailScreen> {
                                   right: 0.0,
                                   top: 10,
                                   bottom: 10),
-                              child: Text('03',
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontFamily: 'Roboto-Bold',
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 45,
+                              child: ConstrainedBox(
+                                constraints: BoxConstraints(
+                                  minWidth: 20,
+                                  minHeight: 20,
+                                  maxWidth: 40,
+                                  maxHeight: 40,
                                 ),
+                                child: Image.asset('lib/assets/k.png', fit: BoxFit.cover),
                               ),
                             ),
                           ],
                         ),
                       ),
                     ),
-                    Container(
-                      margin: EdgeInsets.only(bottom: 0.0),
-                      // padding: const EdgeInsets.only(top: 0,bottom: 0, left: 0, right: 0),
-                      // height: MediaQuery.of(context).size.height - 410,        // USE THIS LINE FOR SCROLL ONLY THE LIST
-                      child: Column (                                             // USE THIS LINE FOR SCROLL ENTIRE PAGE
-                        mainAxisSize: MainAxisSize.min,
-                        children: <Widget>[
-                          ListView.builder(
-                              physics: NeverScrollableScrollPhysics(),
-                              scrollDirection: Axis.vertical,
-                              shrinkWrap: true,
-                              itemCount: 20,
-                              itemBuilder: (BuildContext context, int index) {
-                                return GestureDetector(
-                                  onTap: () {
-                                    print('Index $index');
-                                  },
-                                  child: ListTileItem(
-                                      '18215'
-                                          .toString()
-                                          .toUpperCase(),
-                                      '56554455668'
-                                          .toString()
-                                          .toUpperCase(),
-                                    'Approved'.toString()
-                                        .toUpperCase(),
-                                  ),
 
-                                );
-                              }
-                          )
-                        ],
+                    Padding(
+                      padding: const EdgeInsets.only(
+                          left: 0.0,
+                          right: 0.0,
+                          top: 10,
+                          bottom: 0),
+                      child: Align(
+                        alignment: Alignment.center,
+                        child: Text('NATHEM LIAM',
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontFamily: 'Roboto-Bold',
+                            fontWeight: FontWeight.bold,
+                            fontSize: 30,
+                          ),
+                        ),
                       ),
-                      /*                                                            // USE THIS LINE FOR SCROLL ONLY THE LIST
-                      child: ListView.builder(
-                          scrollDirection: Axis.vertical,
-                          shrinkWrap: true,
-                          itemCount: 20,
-                          itemBuilder: (BuildContext context, int index) {
-                            return GestureDetector(
-                              onTap: () {
-
-                              },
-                              child: ListTileItem(
-                                  'Ak'
-                                      .toString()
-                                      .toUpperCase(),
-                                  '10:30 AM'
-                                      .toString()
-                                      .toUpperCase()
-                              ),
-
-                            );
-                          }
-                      ),
-                      */
                     ),
 
-                  ],
+                    Padding(
+                      padding: const EdgeInsets.only(
+                          left: 0.0,
+                          right: 0.0,
+                          top: 15,
+                          bottom: 0),
+                      child: Align(
+                        alignment: Alignment.center,
+                        child: RawMaterialButton(
+                          fillColor: AppColor.green,
+                          // splashColor: Colors.greenAccent,
+                          child: Padding(
+                            padding: EdgeInsets.all(10.0),
+                            child: Container(
+                              width: 300,
+                              height: 40,
+                              padding: new EdgeInsets.fromLTRB(0, 0, 0, 0),
+                              child: Align(
+                                alignment: Alignment.center,
+                                child: Text(
+                                  "PASS",
+                                  maxLines: 1,
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontFamily: 'Roboto-Bold',
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 20,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                          onPressed: (){
+                            print ('Tab Btn');
+                          },
+                          shape: const StadiumBorder(),
+                        )
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(
+                          left: 0.0,
+                          right: 0.0,
+                          top: 15,
+                          bottom: 0),
+                      child: Align(
+                          alignment: Alignment.center,
+                          child: RawMaterialButton(
+                            fillColor: Colors.grey[400],
+                            // splashColor: Colors.greenAccent,
+                            child: Padding(
+                              padding: EdgeInsets.all(10.0),
+                              child: Container(
+                                width: 300,
+                                height: 40,
+                                padding: new EdgeInsets.fromLTRB(0, 0, 0, 0),
+                                child: Align(
+                                  alignment: Alignment.center,
+                                  child: Text(
+                                    "DECLINE",
+                                    maxLines: 1,
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontFamily: 'Roboto-Bold',
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 20,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                            onPressed: (){
+                              print ('Tab Btn');
+                            },
+                            shape: const StadiumBorder(),
+                          )
+                      ),
+                    ),
+
+                    SizedBox(
+                      height: 30,
+                    ),
+
+                ],
                 ),
               ),
 
