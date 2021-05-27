@@ -129,7 +129,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                     SizedBox(height: 3),
                     Text(
-                      'TRUCK Management',
+                      'WAREHOUSE Management',
                       style: TextStyle(
                         color: AppColor.white,
                         fontSize: 15,
@@ -281,7 +281,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
                            'KERCHANSHE TRADING PLC',
                            style: TextStyle(
-                             color: Colors.grey[800],
+                             color: AppColor.darkgrey,
 
                              fontSize: 14,
                              letterSpacing: 1,
@@ -295,7 +295,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         Text(
                           'version v1.0',
                           style: TextStyle(
-                            color: Colors.grey[800],
+                            color: AppColor.darkgrey,
                             fontSize: 14,
                             letterSpacing: 1,
                             fontFamily: 'Roboto-Light',

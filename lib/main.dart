@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:gatekeeper_kerchanshe/Screens/listing_screen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 
@@ -59,7 +60,7 @@ class _MyAppState extends State<MyApp> {
         ),
       ),
       debugShowCheckedModeBanner: false,
-      home: LoginScreen(),
+      home: ListingScreen(),
 
     );
   }
