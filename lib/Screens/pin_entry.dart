@@ -2,6 +2,7 @@
 import 'dart:convert';
 import 'package:device_info/device_info.dart';
 import 'package:flutter/services.dart';
+import 'package:gatekeeper_kerchanshe/Screens/listing_screen.dart';
 import 'package:gatekeeper_kerchanshe/constants/apis.dart';
 import 'package:gatekeeper_kerchanshe/constants/colors.dart';
 import 'package:http/http.dart' as http;
@@ -313,6 +314,13 @@ class _PinEntryScreenState extends State<PinEntryScreen> {
                                     onPressed: () {
                                       if (currentText != null) {
                                         getRegisterd(currentText);
+                                        Navigator.of(context).pushReplacement(
+                                          new MaterialPageRoute(
+                                            builder: (BuildContext context) {
+                                              return ListingScreen();
+                                            },
+                                          ),
+                                        );
                                       } else {
                                         _displayErSnackBar(
                                             context, 'Please enter your pin number');

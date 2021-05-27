@@ -106,18 +106,8 @@ class _DetailScreenState extends State<DetailScreen> {
                     SizedBox(
                       // USE OF SIZEDBOX IS TO MAKE PROPER SPACE AROUND THE ICON
                       height: 50.0,
-                      width: 80.0,
-                      child: new IconButton(
-                        padding: new EdgeInsets.fromLTRB(0, 0, 20, 0),
-                        color: AppColor.green,
-                        icon: new Icon(
-                            Icons.power_settings_new,
-                            size: 40.0
-                        ),
-                        onPressed: () {
-                          print("power click");
-                        },
-                      ),
+                      width: 50.0,
+                      child: Image.asset('lib/assets/greenicon.png', fit: BoxFit.none),
                     ),
 
                     Row(
@@ -177,7 +167,7 @@ class _DetailScreenState extends State<DetailScreen> {
                             topLeft: Radius.circular(20),
                             topRight: Radius.circular(20),
                           ),
-                          color: Colors.lightGreen[200],
+                          color: AppColor.milkishgreen,
                         ),
                         child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
@@ -352,7 +342,7 @@ class _DetailScreenState extends State<DetailScreen> {
                         padding: const EdgeInsets.only(top: 5,bottom: 5, left: 0, right: 0),
                         decoration: BoxDecoration(
                             // borderRadius: BorderRadius.all(Radius.circular(20)),
-                            color: AppColor.green
+                            color: AppColor.milkygreen
                         ),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
@@ -385,7 +375,7 @@ class _DetailScreenState extends State<DetailScreen> {
                                   maxWidth: 40,
                                   maxHeight: 40,
                                 ),
-                                child: Image.asset('lib/assets/k.png', fit: BoxFit.cover),
+                                child: Image.asset('lib/assets/tick.png', fit: BoxFit.cover),
                               ),
                             ),
                           ],
@@ -445,7 +435,27 @@ class _DetailScreenState extends State<DetailScreen> {
                             ),
                           ),
                           onPressed: (){
-                            print ('Tab Btn');
+                            //alert
+                            showDialog<String>(
+                              context: context,
+                              builder: (BuildContext context) =>
+                                  AlertDialog(
+                                    title: const Text('AlertDialog Tilte'),
+                                    content: const Text('AlertDialog description'),
+                                    actions: <Widget>[
+                                      TextButton(
+                                        onPressed: () => Navigator.pop(context, 'Cancel'),
+                                        child: const Text('Cancel'),
+                                      ),
+                                      TextButton(
+                                        onPressed: () => Navigator.pop(context, 'OK'),
+                                        child: const Text('OK'),
+                                      ),
+                                    ],
+                                  ),
+                            );
+
+                            //print ('Tab Btn');
                           },
                           shape: const StadiumBorder(),
                         )
@@ -484,7 +494,7 @@ class _DetailScreenState extends State<DetailScreen> {
                               ),
                             ),
                             onPressed: (){
-                              print ('Tab Btn');
+                              print ('decline');
                             },
                             shape: const StadiumBorder(),
                           )

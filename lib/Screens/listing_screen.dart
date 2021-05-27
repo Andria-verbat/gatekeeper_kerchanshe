@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'dart:io';
 
+import 'package:gatekeeper_kerchanshe/Screens/detail_screen.dart';
 import 'package:gatekeeper_kerchanshe/constants/apis.dart';
 import 'package:gatekeeper_kerchanshe/constants/colors.dart';
 import 'package:gatekeeper_kerchanshe/widgets/list_tile.dart';
@@ -329,7 +330,13 @@ class _ListingScreenState extends State<ListingScreen> {
                               itemBuilder: (BuildContext context, int index) {
                                 return GestureDetector(
                                   onTap: () {
-                                    print('Index $index');
+                                    Navigator.of(context).pushReplacement(
+                                      new MaterialPageRoute(
+                                        builder: (BuildContext context) {
+                                          return DetailScreen();
+                                        },
+                                      ),
+                                    );
                                   },
                                   child: ListTileItem(
                                       '18215'

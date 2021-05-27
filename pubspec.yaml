@@ -68,6 +68,8 @@ flutter:
     - lib/assets/truck.png
     - lib/assets/tick.png
     - lib/assets/key.png
+    - lib/assets/green_bg.png
+    - lib/assets/white_bg.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
