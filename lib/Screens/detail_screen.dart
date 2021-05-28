@@ -16,6 +16,24 @@ class DetailScreen extends StatefulWidget {
 
 class _DetailScreenState extends State<DetailScreen> {
 
+  bool popScreenVisible = false;
+  void _changed(bool visibility, String field) {
+    setState(() {
+      if (field == "popView"){
+        popScreenVisible = visibility;
+      }
+      if(visibility == true){
+        Future.delayed(Duration(seconds: 3),() async{
+          if(this.mounted)
+            setState((){
+              popScreenVisible = false;
+            });
+        });
+
+        }
+    });
+  }
+
   final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
 
   _displayErSnackBar(BuildContext context, String _msg) {
@@ -448,7 +466,7 @@ class _DetailScreenState extends State<DetailScreen> {
                                         child: const Text('Cancel'),
                                       ),
                                       TextButton(
-                                        onPressed: () => Navigator.pop(context, 'OK'),
+                                        onPressed: () => Navigator.pop(context, _changed(true, "popView")),
                                         child: const Text('OK'),
                                       ),
                                     ],
@@ -508,7 +526,37 @@ class _DetailScreenState extends State<DetailScreen> {
                 ],
                 ),
               ),
-
+            popScreenVisible ? Container(
+              height: MediaQuery.of(context).size.height,
+              width: MediaQuery.of(context).size.width,
+              color: Colors.white,
+              child:
+              RotatedBox(
+                quarterTurns: 0,
+                child: Image.asset(
+                  'lib/assets/green_bg.png',
+                  fit: BoxFit.fill,
+                ),
+              ),
+              // Stack(
+              //   children: [
+              //     RotatedBox(
+              //       quarterTurns: 0,
+              //       child: Image.asset(
+              //         'lib/assets/green_bg.png',
+              //         fit: BoxFit.fill,
+              //       ),
+              //     ),
+              //     RotatedBox(
+              //       quarterTurns: 0,
+              //       child: Image.asset(
+              //         'lib/assets/white_bg.png',
+              //         fit: BoxFit.fill,
+              //       ),
+              //     ),
+              //   ],
+              // ),
+            ) : new Container(),
 
           ],
         ),
