@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:gatekeeper_kerchanshe/Screens/detail_screen.dart';
+import 'package:gatekeeper_kerchanshe/Screens/history_detail_screen.dart';
 import 'package:gatekeeper_kerchanshe/constants/apis.dart';
 import 'package:gatekeeper_kerchanshe/constants/colors.dart';
 import 'package:gatekeeper_kerchanshe/widgets/list_tile.dart';
@@ -182,7 +183,7 @@ class _HistoryListState extends State<HistoryList> {
                                   Navigator.of(context).pushReplacement(
                                     new MaterialPageRoute(
                                       builder: (BuildContext context) {
-                                        return DetailScreen();
+                                        return HistoryDetailScreen();
                                       },
                                     ),
                                   );
