@@ -110,7 +110,7 @@ class _HistoryDetailScreenState extends State<HistoryDetailScreen> {
                           onPressed: () {
                             Navigator.of(context).pop((route){
                               print('Screen: ${route.settings.name}');
-                              return route.settings.name == 'ListingScreen';
+                              return route.settings.name == 'HistoryScreen';
                             });
                             print("back click");
                           },
@@ -132,6 +132,10 @@ class _HistoryDetailScreenState extends State<HistoryDetailScreen> {
                                   size: 40.0
                               ),
                               onPressed: () {
+                                Navigator.of(context).pop((route) {
+                                  print('Screen: ${route.settings.name}');
+                                  return route.settings.name == 'ListingScreen';
+                                });
                                 print("power click");
                               },
                             ),

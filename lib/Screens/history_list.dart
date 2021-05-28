@@ -76,6 +76,10 @@ class _HistoryListState extends State<HistoryList> {
                               size: 40.0
                           ),
                           onPressed: () {
+                            Navigator.of(context).pop((route) {
+                              print('Screen: ${route.settings.name}');
+                              return route.settings.name == 'ListingScreen';
+                            });
                             print("back click");
                           },
                         ),
@@ -133,34 +137,28 @@ class _HistoryListState extends State<HistoryList> {
                             left: 20.0,
                             top: 10,
                             bottom: 8),
-                        child: Text('Truck History',
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontFamily: 'Montserrat-Bold',
-                            fontSize: 30,
-                          ),
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(
-                            left: 0.0,
-                            top: 10,
-                            bottom: 0),
                         child: Row (
                           children: [
+                            Text('Truck History',
+                              style: TextStyle(
+                                color: Colors.black,
+                                fontFamily: 'Montserrat-Bold',
+                                fontSize: 30,
+                              ),
+                            ),
+                            SizedBox(
+                              width: 15,
+                            ),
                             Container(
-                              padding: const EdgeInsets.only(top: .5,bottom: .5, left: 35, right: 20),
+                              width: 70,
+                              padding: const EdgeInsets.only(
+                                  top: .5, bottom: .5, left: 35, right: 20),
                               decoration: BoxDecoration(
                                 color: AppColor.green,
                               ),
                             ),
-                            SizedBox(
-                              width: 10,
-                            ),
-
                           ],
                         ),
-
                       ),
                     ],
                   ),
@@ -180,13 +178,21 @@ class _HistoryListState extends State<HistoryList> {
                             itemBuilder: (BuildContext context, int index) {
                               return GestureDetector(
                                 onTap: () {
-                                  Navigator.of(context).pushReplacement(
+                                  Navigator.of(context).push(
                                     new MaterialPageRoute(
                                       builder: (BuildContext context) {
                                         return HistoryDetailScreen();
                                       },
+                                      settings: RouteSettings(name: 'HistoryDetailScreen',),
                                     ),
                                   );
+                                  // Navigator.of(context).pushReplacement(
+                                  //   new MaterialPageRoute(
+                                  //     builder: (BuildContext context) {
+                                  //       return HistoryDetailScreen();
+                                  //     },
+                                  //   ),
+                                  // );
                                 },
                                 child: ListTileItem(
                                   '18215'

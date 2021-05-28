@@ -461,8 +461,9 @@ class _DetailScreenState extends State<DetailScreen> {
                               builder: (BuildContext context) => AlertDialog(
                                 //title: const Text('AlertDialog Tilte'),
                                 content: Container(
-                                  height: 80,
+                                  // height: 80,
                                   child: new Column(
+                                    mainAxisSize: MainAxisSize.min,
                                     children: [
                                       Text(
                                         'Request No',
@@ -482,66 +483,125 @@ class _DetailScreenState extends State<DetailScreen> {
                                         'Do you want to continue',
                                         textAlign: TextAlign.center,
                                       ),
+                                      SizedBox(height: 30,),
+                                      Row(
+                                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                        // crossAxisAlignment: CrossAxisAlignment.start,
+
+                                        children: <Widget>[
+                                          Container(
+                                            decoration: BoxDecoration(
+                                              borderRadius: BorderRadius.all(
+                                                  Radius.circular(10.0)),
+                                              color: AppColor.red,
+                                            ),
+                                            padding: const EdgeInsets.only(
+                                                top: 2,
+                                                bottom: 2,
+                                                left: 20,
+                                                right: 20),
+                                            child: new TextButton(
+                                              onPressed: () =>
+                                                  Navigator.pop(context, 'Cancel'),
+                                              child: const Text(
+                                                'NO',
+                                                style: TextStyle(
+                                                  fontWeight: FontWeight.normal,
+                                                  color: AppColor.white,
+                                                  fontSize: 15,
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                          Container(
+                                            decoration: BoxDecoration(
+                                              borderRadius: BorderRadius.all(
+                                                  Radius.circular(10.0)),
+                                              color: AppColor.green,
+                                            ),
+                                            padding: const EdgeInsets.only(
+                                                top: 2,
+                                                bottom: 2,
+                                                left: 20,
+                                                right: 20),
+                                            child: new TextButton(
+                                              onPressed: () => Navigator.pop(
+                                                  context,
+                                                  _changed(true, "popView")),
+                                              child: const Text(
+                                                'YES',
+                                                style: TextStyle(
+                                                  fontWeight: FontWeight.normal,
+                                                  color: AppColor.white,
+                                                  fontSize: 15,
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                        ],
+                                      ),
                                     ],
                                   ),
                                 ),
 
-                                actions: <Widget>[
-                                  Row(
-
-                                    children: [
-                                      Container(
-                                        decoration: BoxDecoration(
-                                          borderRadius: BorderRadius.all(
-                                              Radius.circular(10.0)),
-                                          color: AppColor.red,
-                                        ),
-                                        padding: const EdgeInsets.only(
-                                            top: 2,
-                                            bottom: 2,
-                                            left: 20,
-                                            right: 20),
-                                        child: new TextButton(
-                                          onPressed: () =>
-                                              Navigator.pop(context, 'Cancel'),
-                                          child: const Text(
-                                            'NO',
-                                            style: TextStyle(
-                                              fontWeight: FontWeight.normal,
-                                              color: AppColor.white,
-                                              fontSize: 15,
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-                                      Container(
-                                        decoration: BoxDecoration(
-                                          borderRadius: BorderRadius.all(
-                                              Radius.circular(10.0)),
-                                          color: AppColor.green,
-                                        ),
-                                        padding: const EdgeInsets.only(
-                                            top: 2,
-                                            bottom: 2,
-                                            left: 20,
-                                            right: 20),
-                                        child: new TextButton(
-                                          onPressed: () => Navigator.pop(
-                                              context,
-                                              _changed(true, "popView")),
-                                          child: const Text(
-                                            'YES',
-                                            style: TextStyle(
-                                              fontWeight: FontWeight.normal,
-                                              color: AppColor.white,
-                                              fontSize: 15,
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ],
+                                // actions: <Widget>[
+                                //   Row(
+                                //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                //     // crossAxisAlignment: CrossAxisAlignment.start,
+                                //
+                                //     children: <Widget>[
+                                //       Container(
+                                //         decoration: BoxDecoration(
+                                //           borderRadius: BorderRadius.all(
+                                //               Radius.circular(10.0)),
+                                //           color: AppColor.red,
+                                //         ),
+                                //         padding: const EdgeInsets.only(
+                                //             top: 2,
+                                //             bottom: 2,
+                                //             left: 20,
+                                //             right: 20),
+                                //         child: new TextButton(
+                                //           onPressed: () =>
+                                //               Navigator.pop(context, 'Cancel'),
+                                //           child: const Text(
+                                //             'NO',
+                                //             style: TextStyle(
+                                //               fontWeight: FontWeight.normal,
+                                //               color: AppColor.white,
+                                //               fontSize: 15,
+                                //             ),
+                                //           ),
+                                //         ),
+                                //       ),
+                                //       Container(
+                                //         decoration: BoxDecoration(
+                                //           borderRadius: BorderRadius.all(
+                                //               Radius.circular(10.0)),
+                                //           color: AppColor.green,
+                                //         ),
+                                //         padding: const EdgeInsets.only(
+                                //             top: 2,
+                                //             bottom: 2,
+                                //             left: 20,
+                                //             right: 20),
+                                //         child: new TextButton(
+                                //           onPressed: () => Navigator.pop(
+                                //               context,
+                                //               _changed(true, "popView")),
+                                //           child: const Text(
+                                //             'YES',
+                                //             style: TextStyle(
+                                //               fontWeight: FontWeight.normal,
+                                //               color: AppColor.white,
+                                //               fontSize: 15,
+                                //             ),
+                                //           ),
+                                //         ),
+                                //       ),
+                                //     ],
+                                //   ),
+                                // ],
                               ),
                             );
 
@@ -597,8 +657,7 @@ class _DetailScreenState extends State<DetailScreen> {
                 ],
               ),
             ),
-            popScreenVisible
-                ? Container(
+            popScreenVisible ? Container(
                     height: MediaQuery.of(context).size.height,
                     width: MediaQuery.of(context).size.width,
                     color: Colors.white,

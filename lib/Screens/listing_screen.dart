@@ -149,6 +149,7 @@ class _ListingScreenState extends State<ListingScreen> {
                           child: Row (
                             children: [
                               Container(
+                                width: 70,
                                 padding: const EdgeInsets.only(top: .5,bottom: .5, left: 35, right: 20),
                                 decoration: BoxDecoration(
                                   color: AppColor.green,
@@ -159,13 +160,21 @@ class _ListingScreenState extends State<ListingScreen> {
                               ),
                               GestureDetector(
                                 onTap: (){
-                                  Navigator.of(context).pushReplacement(
+                                  Navigator.of(context).push(
                                     new MaterialPageRoute(
                                       builder: (BuildContext context) {
                                         return HistoryList();
                                       },
+                                      settings: RouteSettings(name: 'HistoryScreen',),
                                     ),
                                   );
+                                  // Navigator.of(context).pushReplacement(
+                                  //   new MaterialPageRoute(
+                                  //     builder: (BuildContext context) {
+                                  //       return HistoryList();
+                                  //     },
+                                  //   ),
+                                  // );
                                 },
                                 child: new Container(
                                   decoration: BoxDecoration(
