@@ -4,6 +4,7 @@ import 'dart:io';
 import 'package:gatekeeper_kerchanshe/constants/apis.dart';
 import 'package:gatekeeper_kerchanshe/constants/colors.dart';
 import 'package:gatekeeper_kerchanshe/widgets/list_tile.dart';
+import 'package:gatekeeper_kerchanshe/Screens/listing_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
@@ -25,8 +26,14 @@ class _DetailScreenState extends State<DetailScreen> {
       if(visibility == true){
         Future.delayed(Duration(seconds: 3),() async{
           if(this.mounted)
+            // popScreenVisible = false;
             setState((){
-              popScreenVisible = false;
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) =>
+                        ListingScreen(),
+              ));
             });
         });
 
@@ -530,32 +537,102 @@ class _DetailScreenState extends State<DetailScreen> {
               height: MediaQuery.of(context).size.height,
               width: MediaQuery.of(context).size.width,
               color: Colors.white,
-              child:
-              RotatedBox(
-                quarterTurns: 0,
-                child: Image.asset(
-                  'lib/assets/green_bg.png',
-                  fit: BoxFit.fill,
+              child: Stack(
+                  children: <Widget>[
+                    // new Container(
+                    //   // height: MediaQuery.of(context).size.height,
+                    //   // width: MediaQuery.of(context).size.width,
+                    //   alignment: Alignment.center,
+                    //   color: AppColor.green,
+                    //   child: Image.asset(
+                    //       'lib/assets/green_bg.png',
+                    //       fit: BoxFit.cover,
+                    //     ),
+                    // ),
+                    new Container(
+                      alignment: Alignment.center,
+                      color: AppColor.green,
+                      child: Stack(
+                        children: [
+                          new Container(
+                            alignment:  Alignment.center,
+                            child: RotatedBox(
+                              quarterTurns: 0,
+                              child: Image.asset(
+                                'lib/assets/white_bg.png',
+                                fit: BoxFit.cover,
+                              ),
+                            ),
+                          ),
+                          new Container(
+                            padding: new EdgeInsets.fromLTRB(0, 50, 0, 0),
+                            alignment:  Alignment.center,
+                            child: RotatedBox(
+                              quarterTurns: 0,
+                              child: Column (
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  ConstrainedBox(
+                                    constraints: BoxConstraints(
+                                      minWidth: 60.0,
+                                      maxWidth: 300 ,
+                                      minHeight: 20.0,
+                                      maxHeight: 150.0,
+                                    ),
+                                    child: Text(
+                                      "182155",
+                                      maxLines: 3,
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                        color: Colors.black,
+                                        fontFamily: 'Roboto-Bold',
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 35,
+                                      ),
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsets.only(
+                                        left: 0.0,
+                                        right: 0.0,
+                                        top: 100,
+                                        bottom: 20),
+                                    child: Text(
+                                      "Is allowed to Pass",
+                                      maxLines: 1,
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                        color: Colors.black,
+                                        fontFamily: 'Roboto-Bold',
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 25,
+                                      ),
+                                    ),
+                                  ),
+
+                                  Padding(
+                                    padding: const EdgeInsets.only(
+                                        left: 0.0,
+                                        right: 0.0,
+                                        top: 20,
+                                        bottom: 0),
+                                    child: Image.asset(
+                                      'lib/assets/tick.png',
+                                      fit: BoxFit.fill,
+                                    ),
+                                  ),
+                                ],
+                              ),
+
+                            ),
+                          ),
+
+                        ],
+                      ),
+                    ),
+                  ],
                 ),
-              ),
-              // Stack(
-              //   children: [
-              //     RotatedBox(
-              //       quarterTurns: 0,
-              //       child: Image.asset(
-              //         'lib/assets/green_bg.png',
-              //         fit: BoxFit.fill,
-              //       ),
-              //     ),
-              //     RotatedBox(
-              //       quarterTurns: 0,
-              //       child: Image.asset(
-              //         'lib/assets/white_bg.png',
-              //         fit: BoxFit.fill,
-              //       ),
-              //     ),
-              //   ],
-              // ),
+
             ) : new Container(),
 
           ],
