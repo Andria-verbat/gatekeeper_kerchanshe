@@ -7,11 +7,13 @@ class ListTileItem extends StatelessWidget {
   final String requestNoString;
   final String containerNoString;
   final String approvedString;
+  final bool isPass;
   // final Uint8List imagE;
   ListTileItem(
       this.requestNoString,
       this.containerNoString,
       this.approvedString,
+      this.isPass,
       // this.imagE,
       );
   @override
@@ -242,6 +244,7 @@ class ListTileItem extends StatelessWidget {
                                     },
                                   ),*/
                                   //new Image.asset('lib/assets/tick.png', fit: BoxFit.none),
+                                  isPass ?
                                  new ConstrainedBox(
                                     constraints: BoxConstraints(
                                       minWidth: 20,
@@ -250,6 +253,9 @@ class ListTileItem extends StatelessWidget {
                                       maxHeight: 40,
                                     ),
                                     child: Image.asset('lib/assets/tick.png', fit: BoxFit.fill),
+                                  ):
+                                  SizedBox(
+                                    width: 1,
                                   ),
                                   SizedBox(
                                     width: 5,

@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:gatekeeper_kerchanshe/Screens/detail_screen.dart';
+import 'package:gatekeeper_kerchanshe/Screens/history_list.dart';
 import 'package:gatekeeper_kerchanshe/constants/apis.dart';
 import 'package:gatekeeper_kerchanshe/constants/colors.dart';
 import 'package:gatekeeper_kerchanshe/widgets/list_tile.dart';
@@ -156,23 +157,38 @@ class _ListingScreenState extends State<ListingScreen> {
                               SizedBox(
                                 width: 10,
                               ),
-                              Container(
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.only(
-                                    topLeft: Radius.circular(20),
-                                    bottomLeft: Radius.circular(20),
+                              GestureDetector(
+                                onTap: (){
+                                  Navigator.of(context).pushReplacement(
+                                    new MaterialPageRoute(
+                                      builder: (BuildContext context) {
+                                        return HistoryList();
+                                      },
+                                    ),
+                                  );
+                                },
+                                child: new Container(
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.only(
+                                      topLeft: Radius.circular(20),
+                                      bottomLeft: Radius.circular(20),
+                                    ),
+                                    color: AppColor.green1,
                                   ),
-                                  color: AppColor.green1,
-                                ),
-                                padding: const EdgeInsets.only(top: 5,bottom: 5, left: 30, right: 20),
-                                child: Text(
-                                  'HISTORY',
-                                  style: TextStyle(
-                                    fontWeight: FontWeight.normal,
-                                    fontSize: 15,
+                                  padding: const EdgeInsets.only(top: 5,bottom: 5, left: 30, right: 20),
+                                  child: Text(
+                                    'HISTORY',
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.normal,
+                                      fontSize: 15,
+
+                                    ),
+
                                   ),
+
                                 ),
                               ),
+
                             ],
                           ),
 
@@ -347,6 +363,7 @@ class _ListingScreenState extends State<ListingScreen> {
                                           .toUpperCase(),
                                     'Approved'.toString()
                                         .toUpperCase(),
+                                    true,
                                   ),
 
                                 );
