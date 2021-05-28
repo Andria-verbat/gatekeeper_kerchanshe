@@ -70,6 +70,7 @@ flutter:
     - lib/assets/key.png
     - lib/assets/green_bg.png
     - lib/assets/white_bg.png
+    - lib/assets/tick_whitebg.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

@@ -249,7 +249,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                       setState(() {
                                         loadingBool = true;
                                       });
-                                      if (passwordController.text.length > 15) {
+                                      if (passwordController.text.length == 16) {
                                         Navigator.of(context).pushReplacement(
                                           new MaterialPageRoute(
                                             builder: (BuildContext context) {
