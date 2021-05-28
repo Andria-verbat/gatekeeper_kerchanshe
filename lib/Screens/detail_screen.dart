@@ -28,12 +28,21 @@ class _DetailScreenState extends State<DetailScreen> {
           if(this.mounted)
             // popScreenVisible = false;
             setState((){
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) =>
-                        ListingScreen(),
-              ));
+              Navigator.of(context).push(
+                new MaterialPageRoute(
+                  builder: (BuildContext context) {
+                    return ListingScreen();
+                  },
+                  settings: RouteSettings(name: 'ListingScreen',),
+                ),
+              );
+              // Navigator.push(
+              //     context,
+              //     MaterialPageRoute(
+              //       builder: (context) =>
+              //           ListingScreen(),
+              //       settings: RouteSettings(name: 'ListingScreen',),
+              // ));
             });
         });
 
@@ -98,6 +107,10 @@ class _DetailScreenState extends State<DetailScreen> {
                                 size: 40.0
                             ),
                             onPressed: () {
+                              Navigator.of(context).pop((route){
+                                print('Screen: ${route.settings.name}');
+                                return route.settings.name == 'ListingScreen';
+                              });
                               print("back click");
                             },
                           ),
@@ -565,7 +578,7 @@ class _DetailScreenState extends State<DetailScreen> {
                             ),
                           ),
                           new Container(
-                            padding: new EdgeInsets.fromLTRB(0, 50, 0, 0),
+                            padding: new EdgeInsets.fromLTRB(0, 80, 0, 0),
                             alignment:  Alignment.center,
                             child: RotatedBox(
                               quarterTurns: 0,
@@ -614,10 +627,10 @@ class _DetailScreenState extends State<DetailScreen> {
                                     padding: const EdgeInsets.only(
                                         left: 0.0,
                                         right: 0.0,
-                                        top: 20,
+                                        top: 10,
                                         bottom: 0),
                                     child: Image.asset(
-                                      'lib/assets/tick.png',
+                                      'lib/assets/tick_whitebg.png',
                                       fit: BoxFit.fill,
                                     ),
                                   ),

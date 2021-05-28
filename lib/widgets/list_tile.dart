@@ -221,7 +221,7 @@ class ListTileItem extends StatelessWidget {
                                 bottom: 0),
                             child: Container(
                               height: 90,
-                              width: 130,
+                              width: 120,
                               padding: const EdgeInsets.only(top: 0,bottom: 0, left: 0, right: 0),
                               decoration: BoxDecoration(
                                 // borderRadius: BorderRadius.all(Radius.circular(20)),

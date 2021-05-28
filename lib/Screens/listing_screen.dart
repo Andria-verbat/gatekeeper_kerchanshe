@@ -346,11 +346,12 @@ class _ListingScreenState extends State<ListingScreen> {
                               itemBuilder: (BuildContext context, int index) {
                                 return GestureDetector(
                                   onTap: () {
-                                    Navigator.of(context).pushReplacement(
+                                    Navigator.of(context).push(
                                       new MaterialPageRoute(
                                         builder: (BuildContext context) {
                                           return DetailScreen();
                                         },
+                                        settings: RouteSettings(name: 'DetailScreen',),
                                       ),
                                     );
                                   },
